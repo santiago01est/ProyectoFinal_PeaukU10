@@ -1,0 +1,22 @@
+.things-you-need-to-do {
+    background-color: #f7f8fc;
+    margin: 0 0;
+    width: 100%;
+  }
+  
+  #cards-section2 {
+    max-width: 1200px;
+    margin-bottom: 90px;
+    margin: 0 auto;
+  }
+
+  #title_banner{
+    max-width: 1200px;
+    margin-bottom: 90px;
+    margin: 0 auto;
+  }
+
+.cardTitleBold{
+    font-weight: bold;
+    font-size: 20px;
+}
