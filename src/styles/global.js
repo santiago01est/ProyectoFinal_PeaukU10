@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
 
 // colores
 const Colors = {
@@ -14,10 +13,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     font-family: 'Poppins', Sans-Serif;
     color: ${Colors.text};
-    height: 100vh;
     background-color: ${Colors.primary};
     padding: 2em 0em;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 `;
 
