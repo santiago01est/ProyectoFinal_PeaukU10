@@ -1,0 +1,76 @@
+
+#vacation_plan {
+max-width: 1200px;
+  margin-bottom: 90px;
+  margin: 0 auto;
+}
+.palmeras-smart {
+  width: 6.5rem;
+}
+
+.color-precio-card {
+  color: #fa7436;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.book-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px #f4a079;
+    /* Sombra rosa difuminada */
+    transition: box-shadow 0.3s ease;
+    /* Transición suave */
+  }
+  
+  .book-card:hover {
+    box-shadow: 0 8px 16px #f9834c;
+    /* Sombra más intensa al pasar el puntero */
+  }
+  
+  .btn-overlay {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card-header:hover .btn-overlay {
+    opacity: 1;
+  }
+
+  
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  
+  .btn-white {
+    background-color: white;
+    border: #99999980 solid 1px;
+  }
+  
+  .btn-orange {
+    background-color: #fa7436;
+  }
+  
+  .btn-orange:hover {
+    background-color: #f4a079;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .btn-white:hover {
+    background-color: #f4a079;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
