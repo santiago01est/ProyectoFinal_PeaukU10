@@ -5,7 +5,7 @@
 ## Tecnologías Utilizadas
 
 - [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)}
+- [Vite](https://vitejs.dev/)
 - [Bootstrap](https://react-bootstrap.netlify.app/docs/getting-started/introduction/)
 - [Styled Components](https://styled-components.com/)
 
