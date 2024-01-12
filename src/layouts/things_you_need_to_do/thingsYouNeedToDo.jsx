@@ -1,7 +1,7 @@
 import "../../styles/things_you_need_to_do.css";
 const ThingsYouNeedToDo = () => {
     return (
-        <section className="things-you-need-to-do mt-5 pt-3">
+        <section className="things-you-need-to-do py-3">
             <div id="title_banner" className="d-flex justify-content-center row mt-5">
                 <div className="col-8 border-0 mt-5 align-items-center justify-content-center">
                     <div className="main-title d-flex justify-content-center align-items-center flex-column">

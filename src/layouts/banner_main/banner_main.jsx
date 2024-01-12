@@ -2,7 +2,7 @@ import '../../styles/banner_main.css';
 const BannerMain = () => {
     return (
         
-        <section id='banner_main' className='mt-5 pt-3'>
+        <section id='banner_main' className='my-5 pt-3'>
             <div className="hero-section container p-0">
             <div className="get-started row align-items-center">
                 <div className="col">

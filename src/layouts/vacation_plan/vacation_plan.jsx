@@ -4,15 +4,14 @@ const VacationPlan= () => {
         <section id='vacation_plan' className=" mt-5 p-4">
             <div className="justify-content-center row mt-5">
                 <div className="col-6 border-0 mt-3  align-items-center justify-content-center">
-                    <div>
+                    <div className='main-title d-flex justify-content-center align-items-center flex-column'>
                         <h2 className="card-title title-banner">Best <span className="span-color-banner">vacation plan</span>
                         </h2>
                         <p className="card-text small-text-banner mt-4 lh-lg mb-3">Plan your perfect vacation with our travel
-                            agency. Choose among hundreds of all-inclusive offers! </p>
+                            agency. Choose among hundreds of all-inclusive offers! 
+                        </p>
+                        <img src="/icons/palms.svg" alt="viajes"></img>
                     </div>
-                </div>
-                <div className="col-1 border-0 mt-0 align-items-center justify-content-center">
-                    <img src="/img/palmeras.png" alt="viajes" className=" palmeras-smart m-0 p-0 justify-content-start"></img>
                 </div>
             </div>
     
@@ -20,12 +19,9 @@ const VacationPlan= () => {
             <div className="justify-content-end d-flex mb-5">
                 <div className="col-6">
                     <div className="d-flex justify-content-end">
-                      
                         <button className="btn btn-circle btn-white me-3">
                             <img src="/icons/flecha_izq.svg" alt="flecha izquierda"></img>
                         </button>
-    
-                       
                         <button className="btn btn-circle btn-orange">
                             <img src="/icons/flecha_der.svg" alt="flecha derecha"></img>
                         </button>
