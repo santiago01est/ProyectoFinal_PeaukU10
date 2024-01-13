@@ -1,30 +1,31 @@
+import {ButtonCircle} from '../../components/buttons';
+import TitleSectionContainer from '../../components/title_section';
 import '../../styles/vacation_plan.css';
 const VacationPlan= () => {
     return (
         <section id='vacation_plan' className=" mt-5 p-4">
             <div className="justify-content-center row mt-5">
-                <div className="col-6 border-0 mt-3  align-items-center justify-content-center">
-                    <div className='main-title d-flex justify-content-center align-items-center flex-column'>
-                        <h2 className="card-title title-banner">Best <span className="span-color-banner">vacation plan</span>
-                        </h2>
-                        <p className="card-text small-text-banner mt-4 lh-lg mb-3">Plan your perfect vacation with our travel
-                            agency. Choose among hundreds of all-inclusive offers! 
-                        </p>
-                        <img src="/icons/palms.svg" alt="viajes"></img>
-                    </div>
-                </div>
+               
+
+                <TitleSectionContainer
+                    title1={"Best"}
+                    title2={"vacation plan"}
+                    subtitle={
+                        "Plan your perfect vacation with our travel agency. Choose among hundreds of all-inclusive offers! "
+                    }
+                    img={"/icons/palms.svg"}
+                />
+
+
+                
             </div>
     
     
             <div className="justify-content-end d-flex mb-5">
                 <div className="col-6">
-                    <div className="d-flex justify-content-end">
-                        <button className="btn btn-circle btn-white me-3">
-                            <img src="/icons/flecha_izq.svg" alt="flecha izquierda"></img>
-                        </button>
-                        <button className="btn btn-circle btn-orange">
-                            <img src="/icons/flecha_der.svg" alt="flecha derecha"></img>
-                        </button>
+                    <div className="d-flex justify-content-end gap-3">
+                        <ButtonCircle pathImg="/icons/flecha_izq.svg" type="outline"/>
+                        <ButtonCircle pathImg="/icons/flecha_der.svg" type="fill"/>
                     </div>
                 </div>
             </div>

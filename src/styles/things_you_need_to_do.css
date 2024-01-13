@@ -22,18 +22,6 @@
     font-size: 20px;
 }
 
-.main-title{
-  position: relative;
-  & img {
-    right: 0;
-    top: 0;
-    position: absolute;
-    transform: translate(100%, -10%);
-  }
-  & .card-text{
-    width: 30.125rem;
-  }
-}
 
 .line {
   height: 100%;

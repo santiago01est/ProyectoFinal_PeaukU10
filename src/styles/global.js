@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 const Colors = {
   primary: 'white', //background
   secondary: '#FA7436', //acent
-  tertiary: '#C000F0', // acent2
+  tertiary: '#f4a079', // acent2
   text: 'black', // texto
 }
 
@@ -19,5 +19,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 `;
+
+
+
 
 export { GlobalStyle, Colors };

@@ -1,4 +1,5 @@
 import '../styles/header.css';
+import { ButtonCommon } from './buttons';
 
 
 const Header= () => {
@@ -23,8 +24,8 @@ const Header= () => {
 
 
                 <div className="col-3 d-flex justify-content-end align-items-center gap-3">
-                    <button id="btn-login" className="btn-out btn ">Login</button>
-                    <button id="btn-sing" className="btn-fill btn ">Sign up</button>
+                    <ButtonCommon text={'Login'} type={'outline'}/>
+                    <ButtonCommon text={'Sign Up'} type={'fill'}/>
                 </div>
 
             </div>
