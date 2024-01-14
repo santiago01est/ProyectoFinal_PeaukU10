@@ -11,13 +11,9 @@
     }
   }
 
-  
-  .mainn-title{
-    position: relative;
-    & img {
-      right: 0;
-      top: 0;
-      position: absolute;
-      transform: translate(100%, -10%);
-    }
+
+.max-width-section{
+    max-width: 1200px;
+    margin-bottom: 90px;
+    margin: 0 auto;
   }

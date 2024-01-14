@@ -33,103 +33,7 @@
                 }
             }
 
-            & .cards {
-                gap: 2rem;
-                & .card {
-
-                    border-radius: 0.5rem;
-                    border: 2px solid rgba(102, 102, 102, 0.08);
-                    background: #FFF;
-                    width: 16.875rem;
-                    height: 26.625rem;
-
-                    & button {
-                        z-index: 2;
-                        position: absolute;
-                        transform: translate(50%, 400%);
-                        padding: 0.5625rem 1.3125rem 0.5625rem 1.375rem;
-                        background-color: #FA7436;
-                        color: white;
-                        font-family: Poppins;
-                        font-size: 1.125rem;
-                        font-style: normal;
-                        font-weight: 400;
-                    }
-
-                    & img {
-                        object-fit: cover;
-                        height: 18.125rem;
-                        z-index: 1;
-                    }
-
-                    & .card-body {
-                        & img {
-                            width: 1rem;
-                            height: 1rem;
-                        }
-
-                        & .calification {
-                            & img {
-                                margin-bottom: 3px;
-                            }
-                        }
-
-                        & span {
-
-                            font-family: Poppins;
-                            font-size: 1rem;
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 1.5rem;
-                            color: #666;
-
-                        }
-
-                        & .city {
-                            font-family: Poppins;
-                            font-size: 1.5rem;
-                            font-style: normal;
-                            font-weight: 500;
-                            line-height: 1.625rem;
-                        }
-
-                        & .price {
-
-                            & span {
-                                padding: auto;
-                                font-family: Poppins;
-                                font-size: 1rem;
-                                font-style: normal;
-                                font-weight: 600;
-                                line-height: 1.5rem;
-
-                            }
-
-                            & .real {
-                                color: #999;
-                            }
-
-                            & .discount {
-                                padding: 3px;
-                                border-radius: 0.5rem;
-                                background: #FFE7DB;
-                            }
-                        }
-
-                    }
-                }
-
-                & .card:hover {
-                    box-shadow: 0px 16px 80px 0px rgba(254, 147, 94, 0.20);
-
-                    & button {
-                        display: inline !important;
-                    }
-                    & .card-img-top{
-                        opacity: 0.8;
-                    }
-                }
-            }
+            
         }
     }
     .button-carousel-right, .button-carousel-left {
@@ -152,5 +56,103 @@
     img{
         width: 100% !important;
         height: 1rem !important;
+    }
+}
+
+.cards {
+    gap: 2rem;
+    & .card {
+        padding: 0;
+        border-radius: 0.5rem;
+        border: 2px solid rgba(102, 102, 102, 0.08);
+        background: #FFF;
+        width: 16.875rem;
+        height: 26.625rem;
+
+        & button {
+            z-index: 2;
+            position: absolute;
+            transform: translate(50%, 400%);
+            padding: 0.5625rem 1.3125rem 0.5625rem 1.375rem;
+            background-color: #FA7436;
+            color: white;
+            font-family: Poppins;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        & img {
+            object-fit: cover;
+            height: 18.125rem;
+            z-index: 1;
+        }
+
+        & .card-body {
+            & img {
+                width: 1rem;
+                height: 1rem;
+            }
+
+            & .calification {
+                & img {
+                    margin-bottom: 3px;
+                }
+            }
+
+            & span {
+
+                font-family: Poppins;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5rem;
+                color: #666;
+
+            }
+
+            & .city {
+                font-family: Poppins;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.625rem;
+            }
+
+            & .price {
+
+                & span {
+                    padding: auto;
+                    font-family: Poppins;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 1.5rem;
+
+                }
+
+                & .real {
+                    color: #999;
+                }
+
+                & .discount {
+                    padding: 3px;
+                    border-radius: 0.5rem;
+                    background: #FFE7DB;
+                }
+            }
+
+        }
+    }
+
+    & .card:hover {
+        box-shadow: 0px 16px 80px 0px rgba(254, 147, 94, 0.20);
+
+        & button {
+            display: inline !important;
+        }
+        & .card-img-top{
+            opacity: 0.8;
+        }
     }
 }
