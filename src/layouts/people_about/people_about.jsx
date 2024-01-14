@@ -1,29 +1,18 @@
+import TitleSectionContainer from "../../components/title_section";
 import "../../styles/people_about.css";
+import '../../styles/styles_common_sections.css';
 const PeopleAbout = () => {
     return (
         <section className="people-about-section d-flex align-items-center" id="people_about">
-            <div className="deals row p-0 d-flex justify-content-center container-fluid" >
-                <div className="col-4">
-                    <div className="main-title d-flex justify-content-center align-items-start flex-column">
-                        <h2 className="card-title title-banner text-start">
-                            What people say <span className="span-color-banner">about us</span>
-                        </h2>
-                        <p className="card-text small-text-banner mt-5 lh-lg mb-3 text-start">
-                            Our Clients send us bunch of smilies with our services and we love them.{" "}
-                        </p>
-                        <div className="mt-5">
-                            <div className="d-flex">
-                                <button className="btn btn-circle btn-white me-5">
-                                    <img src="/icons/flecha_izq.svg" alt="flecha izquierda"></img>
-                                </button>
-                                <button className="btn btn-circle btn-orange">
-                                    <img src="/icons/flecha_der.svg" alt="flecha derecha"></img>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <div className="max-width-section deals row  p-0 d-flex justify-content-center my-5" >
+                <div className="col">
+                <TitleSectionContainer
+                    title1={"What people say"}
+                    title2={"about us"}
+                />
+                <p className="card-text small-text-banner mt-5 lh-lg mb-3 text-start">Our Clients send us bunch of smilies with our services and we love them.</p>
                 </div>
-                <div className="col-4 position-relative">
+                <div className="col position-relative mt-5">
                     <div className="content d-flex">
                         <div className="about-us">
                             <div className="avatar-people-about  rounded-circle overflow-hidden">
@@ -55,6 +44,8 @@ const PeopleAbout = () => {
                         </div>
                     </div>
                 </div>
+                
+                
             </div>
         </section>
     );
