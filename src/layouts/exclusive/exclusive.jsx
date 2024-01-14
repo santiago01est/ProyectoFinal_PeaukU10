@@ -1,13 +1,11 @@
 import { ButtonCircle } from "../../components/buttons";
 import TitleSectionContainer from "../../components/title_section";
 import "../../styles/exclusive.css";
+import '../../styles/styles_common_sections.css';
 const Exclusive = () => {
     return (
-        <section className="exclusive-section container-fluid p-0">
-            <div className="deals row p-0 ">
-                <div className="col">
-                    <div className="content d-flex flex-column align-items-center">
-                        <div className="justify-content-center row mt-5">
+        <section className="exclusive-section max-width-section container-fluid p-0">
+            <div className="d-flex justify-content-center row mt-5">
                             <TitleSectionContainer
                                 title1={"Exclusive"}
                                 title2={"deals & discounts"}
@@ -16,8 +14,9 @@ const Exclusive = () => {
                                 }
                             />
                         </div>
-                        <div className="cards d-flex mt-5">
-                            <div className="card">
+
+                        <div className="cards row row-cols-4 d-flex justify-content-center mt-5">
+                            <div className="card col ">
                                 <button className="btn d-none">Book Now</button>
                                 <img
                                     src="/img/imgcard04.png"
@@ -47,7 +46,7 @@ const Exclusive = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card">
+                            <div className="card col ">
                                 <button className="btn d-none">Book Now</button>
                                 <img
                                     src="/img/imgcard02.png"
@@ -77,7 +76,8 @@ const Exclusive = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card">
+
+                            <div className="card col ">
                                 <button className="btn d-none">Book Now</button>
                                 <img
                                     src="/img/imgcard01.png"
@@ -107,7 +107,7 @@ const Exclusive = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card">
+                            <div className="card col">
                                 <button className="btn d-none">Book Now</button>
                                 <img
                                     src="/img/imgcard03.png"
@@ -137,7 +137,9 @@ const Exclusive = () => {
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
+
                         <div className=" d-flex justify-content-center mt-5">
                             <div className="col">
                                 <div className="d-flex justify-content-center gap-3">
@@ -149,9 +151,11 @@ const Exclusive = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                        
+                        
+                        
+                        
+                    
         </section>
     );
 };
