@@ -39,7 +39,7 @@ width: 50px;
 const ButtonCommonFill= styled.button`
     background-color: ${Colors.secondary};
     color: ${Colors.primary};
-    padding: 0.4rem 2rem;
+    padding: 8px 30px;
     font-weight: 450;
     /* sombra del boton*/
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -53,8 +53,39 @@ const ButtonCommonFill= styled.button`
 
 const ButtonCommonOutline= styled.button`
     color: ${Colors.secondary};
-    padding: 0.4rem 2rem;
+    padding: 8px 30px;
     font-weight: 450;
+
+//hover
+&:hover{
+    background-color: ${Colors.secondary};
+    color: ${Colors.primary};
+    border: ${Colors.secondary} solid 1px;
+    /* sombra del boton*/
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+`
+
+const ButtonBigCommonFill= styled.button`
+    background-color: ${Colors.secondary};
+    color: ${Colors.primary};
+    padding: 20px 30px;
+    font-weight: 450;
+    /* sombra del boton*/
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    //hover
+    &:hover{
+        background-color: ${Colors.primary};
+        color: ${Colors.secondary};
+        border: ${Colors.secondary} solid 1px;
+    }
+    `
+
+const ButtonBigCommonOutline= styled.button`
+    color: ${Colors.secondary};
+    padding: 20px 30px;
+    font-weight: 450;
+    border: ${Colors.secondary} solid 1px;
 //hover
 &:hover{
     background-color: ${Colors.secondary};
@@ -95,4 +126,18 @@ const ButtonCommon= ({text, type}) => {
     )
 }
 
-export {ButtonCircle, ButtonCommon}
+const ButtonBigCommon= ({text, type}) => {
+    return (
+        type === 'fill' ? (
+            <ButtonBigCommonFill className="btn">
+                {text}
+            </ButtonBigCommonFill>
+        ): (
+            <ButtonBigCommonOutline className="btn">
+                {text}
+            </ButtonBigCommonOutline>
+        )
+    )
+}
+
+export {ButtonCircle, ButtonCommon, ButtonBigCommon}

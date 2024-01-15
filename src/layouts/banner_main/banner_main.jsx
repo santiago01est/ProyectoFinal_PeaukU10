@@ -1,52 +1,86 @@
-import '../../styles/banner_main.css';
+import styled from "styled-components";
+
+import { TextParagraph, TitleBig } from "../../components/texts";
+import { ButtonBigCommon } from "../../components/buttons";
+import SearchBarBannerMain from "../../components/search_bar_banner_main";
+
+const ContainerBannerGeneral = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+
+`;
+const ContainerBannerMain = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px; /* Ajusta el espacio entre elementos en dispositivos móviles según tus preferencias */
+    margin: 20px auto;
+  }
+`;
+
+const ContainerGetStart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+`;
+
+const Img = styled.img`
+  margin-bottom: 20px;
+  width: 50%;
+  height: 50%;
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-top: 40px;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+`;
+
 const BannerMain = () => {
     return (
-        
-        <section id='banner_main' className='my-5 pt-3'>
+        <ContainerBannerGeneral>
+            <ContainerBannerMain>
+                <ContainerGetStart>
+                    <TitleBig>
+                        Get starter your excitings
+                        <span style={{ color: "#FA7436" }}> journey</span> with us
+                    </TitleBig>
+                    <TextParagraph
+                        style={{
+                            marginTop: "40px",
+                            marginBottom: "40px",
+                            textAlign: "justify",
+                            marginRight: "80px",
+                        }}
+                    >
+                        A Team of experienced tourism professionals will provide you with
+                        the best advice and tips for your desire place.
+                    </TextParagraph>
+                    <ButtonBigCommon text="Discover now" type="outline" />
+                </ContainerGetStart>
+                <Img src="/img/logo-principal.png" alt="banner_main" />
+            </ContainerBannerMain>
+            <SearchBarBannerMain></SearchBarBannerMain>
+        </ContainerBannerGeneral>
+    );
+};
+
+/*
+ <section id='banner_main' className='my-5 pt-3'>
             <div className="hero-section container p-0">
             <div className="get-started row align-items-center">
-                <div className="col">
-                    <div className="starter">
-                        <div className="starter-title">
-                            <h1>Get starter your exciting <span className="text-primary">journey</span> with us</h1>
-                        </div>
-                        <div className="starter-desription mt-4">
-                            <p className="text-secondary">A Team of experienced tourism professionals will provide you with
-                                the best advice and tips for your desire place.</p>
-                        </div>
-                        <button className="btn starter-button mt-5 text-primary">Discover Now</button>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="tourist d-flex flex-column align-items-center">
-                        <img src="/img/planes.svg" alt="planes" className="img-planes"/>
-                        <img src="/img/tourist.png" alt="tourist"
-                            className="img-tourist justify-content-center"/>
-                        <div className="elipse"></div>
-                        <div className="achievements">
-                            <div className="trophy achievement-item align-items-center">
-                                <img src="/icons/trophy.png" alt="trophy"/>
-                                <div className="achievement-text">
-                                    <span className="title">Best Tour Awards</span>
-                                </div>
-                            </div>
-                            <div className="google-maps achievement-item align-items-center">
-                                <img src="/icons/google maps.png" alt="google-maps"/>
-                                <div className="achievement-text">
-                                    <span className="title">Explore</span>
-                                    <span className="text-secondary-google-maps">Every cornar of the world with us</span>
-                                </div>
-                            </div>
-                            <div className="star achievement-item align-items-center">
-                                <img src="/icons/star.png" alt="star"/>
-                                <div className="achievement-text">
-                                    <span className="title">27K</span>
-                                    <span className="text-secondary-star">Customer Reviews</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+                
             </div>
             <div className="search-bar row mt-5">
                 <div className="col d-flex justify-content-center align-items-center">
@@ -66,8 +100,7 @@ const BannerMain = () => {
                 </div>
             </div>
         </div>
-        </section>
-    )
-}
+        </section> 
+*/
 
-export default BannerMain
+export default BannerMain;

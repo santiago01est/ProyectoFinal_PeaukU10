@@ -1,6 +1,6 @@
 import TitleSectionContainer from "../../components/title_section";
 import "../../styles/things_you_need_to_do.css";
-import "../../styles/styles_common_sections.css";
+import '../../styles/styles_common_sections.css';
 const ThingsYouNeedToDo = () => {
     return (
         <section className="things-you-need-to-do py-3">
@@ -14,15 +14,17 @@ const ThingsYouNeedToDo = () => {
                     img={"/img/planesV2.svg"}
                 />
 
-                <div
-                    id="cards-section2"
-                    className="justify-content-center row row-cols-3 mt-5 options-banner">
+                <div className="justify-content-center row row-cols-3 mt-5 mb-5 options-banner">
                     <div className="col border-0 mt-5 align-items-center justify-content-center">
                         <div className="card p-2">
+                            <img
+                                src="/icons/line_signUp.svg"
+                                alt="line_signUp"
+                                className="line"
+                            />
                             <div className="card-body">
                                 <img
                                     src="/icons/planning.svg"
-                                    alt="Sign Up"
                                     className="img-cards m-0 p-0 justify-content-start"
                                 />
                                 <h5 className="card-title mt-5 cardTitleBold">Sign Up</h5>
@@ -36,10 +38,14 @@ const ThingsYouNeedToDo = () => {
 
                     <div className="col border-0 mt-5 align-items-center justify-content-center">
                         <div className="card p-2">
+                            <img
+                                src="/icons/line_money.svg"
+                                alt="line_money"
+                                className="line"
+                            />
                             <div className="card-body">
                                 <img
                                     src="/icons/wallet.svg"
-                                    alt="Sign Up"
                                     className="img-cards m-0 p-0 justify-content-start"
                                 />
                                 <h5 className="card-title mt-5 cardTitleBold">
@@ -53,24 +59,24 @@ const ThingsYouNeedToDo = () => {
                         </div>
                     </div>
 
-                    <div className="col border-0 mt-5 align-items-center justify-content-center">
-                        <div className="card p-2">
-                            <div className="card-body">
-                                <img
-                                    src="/icons/gps.svg"
-                                    alt="Sign Up"
-                                    className="img-cards m-0 p-0 justify-content-start"
-                                ></img>
-                                <h5 className="cardTitleBold card-title mt-5 ">
-                                    Exciting Travel
-                                </h5>
-                                <p className="card-text mt-3">
-                                    Start and explore a wide range of exciting travel experience.
-                                </p>
-                            </div>
-                        </div>
+            <div className="col border-0 mt-5 align-items-center justify-content-center">
+                <div className="card p-2">
+                <img
+                                src="/icons/line_travel.svg"
+                                alt="line_travel"
+                                className="line"
+                            />
+                    <div className="card-body">
+                        <img src="/icons/gps.svg" alt="Sign Up" className="img-cards m-0 p-0 justify-content-start"></img>
+                        <h5 className="cardTitleBold card-title mt-5 ">Exciting Travel
+                        </h5>
+                        <p className="card-text mt-3">Start and explore a wide range of exciting travel experience.</p>
                     </div>
                 </div>
+            </div>
+
+        </div>
+                
             </div>
         </section>
     );

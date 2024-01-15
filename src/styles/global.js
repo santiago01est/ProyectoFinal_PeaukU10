@@ -6,6 +6,7 @@ const Colors = {
   secondary: '#FA7436', //acent
   tertiary: '#f4a079', // acent2
   text: 'black', // texto
+  textGray: '#666666',
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -14,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', Sans-Serif;
     color: ${Colors.text};
     background-color: ${Colors.primary};
-    padding: 2em 0em;
+    padding: 2em 1em;
     margin: 0 auto;
     overflow-x: hidden;
   }
