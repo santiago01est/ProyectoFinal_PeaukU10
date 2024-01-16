@@ -2,10 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 // colores
 const Colors = {
-  primary: 'white', //background
+  primary: '#FEFCFB', //background
   secondary: '#FA7436', //acent
   tertiary: '#f4a079', // acent2
-  text: 'black', // texto
+  text: '#222222', // texto
   textGray: '#666666',
 }
 
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', Sans-Serif;
     color: ${Colors.text};
     background-color: ${Colors.primary};
-    padding: 2em 1em;
+    padding: 2em 0em;
     margin: 0 auto;
     overflow-x: hidden;
   }

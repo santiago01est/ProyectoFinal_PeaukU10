@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { TextParagraph, TitleBig } from "../../components/texts";
+import { TextParagraphNormal, TitleBig } from "../../components/texts";
 import { ButtonBigCommon } from "../../components/buttons";
 import SearchBarBannerMain from "../../components/search_bar_banner_main";
 
@@ -11,6 +11,7 @@ const ContainerBannerGeneral = styled.div`
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0em 1em;
 
 `;
 const ContainerBannerMain = styled.div`
@@ -55,17 +56,17 @@ const BannerMain = () => {
                         Get starter your excitings
                         <span style={{ color: "#FA7436" }}> journey</span> with us
                     </TitleBig>
-                    <TextParagraph
+                    <TextParagraphNormal
                         style={{
                             marginTop: "40px",
                             marginBottom: "40px",
                             textAlign: "justify",
-                            marginRight: "80px",
+                            
                         }}
                     >
                         A Team of experienced tourism professionals will provide you with
                         the best advice and tips for your desire place.
-                    </TextParagraph>
+                    </TextParagraphNormal>
                     <ButtonBigCommon text="Discover now" type="outline" />
                 </ContainerGetStart>
                 <Img src="/img/logo-principal.png" alt="banner_main" />

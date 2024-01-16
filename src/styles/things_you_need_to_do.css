@@ -1,38 +1,18 @@
-.things-you-need-to-do {
-    background-color: #f7f8fc;
-    margin: 0 0;
+.line {
+    height: 100%;
     width: 100%;
-    position: relative;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+    position: absolute;
+    z-index: 0;
   }
   
-  #cards-section2 {
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 90px;
+  .card-body {
+    z-index: 1;
   }
-
-
-.cardTitleBold{
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-.line {
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  flex-shrink: 0;
-  position: absolute;
-  z-index: 0;
-}
-
-.card-body {
-  z-index: 1;
-}
-
-.card{
-  width: 23.125rem;
-  height: 17.375rem;
-}
+  
+  .card{
+    width: 23.125rem;
+    height: 17.375rem;
+  }

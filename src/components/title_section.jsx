@@ -1,8 +1,44 @@
 import styled from "styled-components"
 import '../styles/styles_common_sections.css';
-import { TitleSection } from "./texts";
+import { TextParagraphNormal, TitleSection } from "./texts";
 
+const TitleSectionContainerSC = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    `
 
+const TitleSectionContainerContentSC = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+    `
+
+const SubtitleContainer = styled.div`
+    width:30.125rem;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+    `
+const Img = styled.img`
+      width: 80%;
+      height: 80%;
+      right: 0;
+      top: 0;
+      position: absolute;
+      transform: translate(100%, -10%);
+      @media (max-width: 768px) {
+        transform: translate(0, 0);
+        position: relative;
+        width: 40%;
+        height: 40%;
+        margin: 20px auto;
+    }
+`	
 
 /**
 + * Generates the container for the title section.
@@ -15,17 +51,19 @@ import { TitleSection } from "./texts";
 + */
 const TitleSectionContainer = ({title1, title2, subtitle, img}) => {
     return(
-        <div className="col-8 border-0 mt-5 align-items-center justify-content-center">
-                    <div className="main-title d-flex justify-content-center align-items-center flex-column">
-                        <TitleSection className="card-title">
-                            {title1} <span className="span-color-banner">{title2}</span>
+        <TitleSectionContainerSC>
+                    <TitleSectionContainerContentSC>
+                        <TitleSection style={{textAlign: 'center'}}>
+                            {title1} <span style={{ color: "#FA7436" }}> {title2}</span>
                         </TitleSection>
-                        <p className="card-text small-text-banner mt-5 lh-lg mb-3">
-                            {subtitle}
-                        </p>
-                        {img && <img src={img} alt="viajes"></img>}
-                    </div>
-                </div>
+                        <SubtitleContainer>
+                            <TextParagraphNormal style={{textAlign: 'center', marginTop: '20px'}}>
+                                {subtitle}
+                            </TextParagraphNormal>
+                        </SubtitleContainer>
+                        {img && <Img src={img} alt="viajes"></Img>}
+                    </TitleSectionContainerContentSC>
+                </TitleSectionContainerSC>
     )
 }
 

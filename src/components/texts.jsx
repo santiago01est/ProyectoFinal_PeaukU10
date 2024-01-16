@@ -16,16 +16,39 @@ const TitleSection = styled.h2`
     font-style: normal;
     font-weight: 700;
     line-height: 3.375rem;
+    @media (max-width: 868px) {
+    font-size: 2rem;
+  }
 `
 const TextTitle = styled.h2`
     font-size: 1.3rem;
     font-family: "Volkhov", serif;
 `
 
-const TextParagraph = styled.p`
+const TextParagraphNormal = styled.p`
     color: ${Colors.textGray};
     font-size: 18px;
     line-height: 2;
 `
-export {TitleSection, TextTitle, TitleBig, TextParagraph}
+
+const TextParagraphNormalSmall = styled.p`
+    color: ${Colors.text};
+    font-size: 16px;
+    line-height: 2;
+`
+
+const TextParagraphNormalSmaller = styled.p`
+    color: ${Colors.textGray};
+    font-size: 12px;
+    line-height: 2;
+`
+
+
+const TextTitleCard = styled.h3`
+    color: ${Colors.text};
+    font-size: 20px;
+    font-weight: bold;
+`
+
+export {TitleSection, TextTitle, TitleBig, TextParagraphNormal, TextParagraphNormalSmall, TextParagraphNormalSmaller, TextTitleCard}
 

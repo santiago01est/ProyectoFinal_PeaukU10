@@ -1,15 +1,16 @@
 import styled from "styled-components"
 import { ButtonBigCommon } from "./buttons"
+import { TextParagraphNormalSmall, TextParagraphNormalSmaller } from "./texts"
 
 const ContainerSearchBarSC = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: nowrap;
     align-items: center;
     flex-shrink: 0;
-    padding: 0.625rem 1.875rem;
+    padding: 1.5rem 1.875rem;
     border-radius: 0.625rem;
-    background: wheat;
+    background: white;
     box-shadow: 0px 2px 80px 2px rgba(0, 0, 0, 0.06);
     @media (max-width: 768px) {
         flex-direction: column;
@@ -21,30 +22,30 @@ const ItemSearchBarSC = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 1000;
+    font-weight: 500;
     line-height: normal;
     padding-right: 6rem;
     margin-left: 10px;
-    color: #666;
+    @media (max-width: 768px) {
+        padding-right: 0;
+    }
     `
 const SearchBarBannerMain = () => {
     return (
         <ContainerSearchBarSC>
             <ItemSearchBarSC>
-            <h6>Location <img src="/icons/row_down.svg" alt="row_down"/></h6>
-            <span>Where are you going</span>
+            <TextParagraphNormalSmall  style={{display: 'flex', alignItems: 'center'}}>Location <img style={{ width: '1rem', marginLeft: '0.5rem' }} src="/icons/row_down.svg" alt="row_down"/></TextParagraphNormalSmall>
+            <TextParagraphNormalSmaller>Where are you going</TextParagraphNormalSmaller>
             </ItemSearchBarSC>
 
             <ItemSearchBarSC>
-            <h6>Location <img src="/icons/row_down.svg" alt="row_down"/></h6>
-            <span>Where are you going</span>
+            <TextParagraphNormalSmall  style={{display: 'flex', alignItems: 'center'}} >Date <img style={{ width: '1rem', marginLeft: '0.5rem' }} src="/icons/row_down.svg" alt="row_down"/></TextParagraphNormalSmall>
+            <TextParagraphNormalSmaller>When you will go</TextParagraphNormalSmaller>
             </ItemSearchBarSC>
 
             <ItemSearchBarSC>
-            <h6>Location <img src="/icons/row_down.svg" alt="row_down"/></h6>
-            <span>Where are you going</span>
+            <TextParagraphNormalSmall style={{display: 'flex', alignItems: 'center'}}>Guest <img style={{ width: '1rem', marginLeft: '0.5rem' }} src="/icons/row_down.svg" alt="row_down"/></TextParagraphNormalSmall>
+            <TextParagraphNormalSmaller>Number of guest</TextParagraphNormalSmaller>
             </ItemSearchBarSC>
 
             <ButtonBigCommon text={"Explore Now"} type="fill"></ButtonBigCommon>

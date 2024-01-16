@@ -1,5 +1,4 @@
 
-import Header from '../components/header'
 import Navbar from '../components/navbar'
 import BannerMain from '../layouts/banner_main/banner_main'
 import Exclusive from '../layouts/exclusive/exclusive'
@@ -11,6 +10,7 @@ const Home= () => {
         <>
         <Navbar/>
         <BannerMain/>
+        <ThingsYouNeedToDo/>
        
         </>
     )

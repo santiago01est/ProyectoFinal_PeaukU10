@@ -68,21 +68,25 @@ const Navbar = () => {
             </div>
 
             <div className="dropdown_menu" ref={dropDownMenuRef}>
-                <li><Link activeClass="active" smooth spy to="home">
-                    Home
-                </Link></li>
+            <li><Link activeClass="active" smooth spy to="home">
+                        Home
+                    </Link></li>
 
-                <li><Link activeClass="active" smooth spy to="about">
-                    About me
-                </Link></li>
+                    <li><Link activeClass="active" smooth spy to="about">
+                        About
+                    </Link></li>
 
-                <li><Link activeClass="active" smooth spy to="skills">
-                    Skills
-                </Link></li>
+                    <li><Link activeClass="active" smooth spy to="skills">
+                    Destination
+                    </Link></li>
 
-                <li><Link activeClass="active" smooth spy to="projects">
-                    Projects
-                </Link></li>
+                    <li><Link activeClass="active" smooth spy to="projects">
+                        Tour
+                    </Link></li>
+
+                    <li><Link activeClass="active" smooth spy to="projects">
+                        Blog
+                    </Link></li>
                 <div className="action_btn">
                 <ButtonCommon text={'Login'} type={'outline'}><Link activeClass="active" smooth spy to="">
                 </Link></ButtonCommon>
