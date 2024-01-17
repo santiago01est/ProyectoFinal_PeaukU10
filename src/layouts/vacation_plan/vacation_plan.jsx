@@ -18,7 +18,7 @@ const ContainerSectionGeneralSC = styled.div`
 const ContainerButtonsSC = styled.div`
   display: inline-flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   gap: 20px;
   width: 100%;
   margin-top: 40px;
@@ -68,11 +68,12 @@ const VacationPlan = ({ plansVacation }) => {
     const plan= plansVacation.map((plan, index) => (
         <CardPlan
             key={plan.id}
-            title={plan.title}
-            price={plan.price}
-            time={plan.time}
-            score={plan.score}
-            imgPath={plan.imgPath}
+            title={plan.nombre}
+            price={plan.precio}
+            time={plan.duracion_dias}
+            score={5}
+            imgPath={plan.url_img}
+            id={index}
         />
     ))
 
@@ -99,8 +100,8 @@ const VacationPlan = ({ plansVacation }) => {
                 />
             </ContainerButtonsSC>
 
-            <div>
-                <Carousel responsive={responsive} ref={carouselRef} removeArrowOnDeviceType={['desktop','tablet', 'mobile']}>
+            <div style={{ padding: '10px 0px' }}>
+                <Carousel className="react-carousel"  responsive={responsive} ref={carouselRef} removeArrowOnDeviceType={['desktop','tablet', 'mobile']}>
                     {plan}
                 </Carousel>
             </div>

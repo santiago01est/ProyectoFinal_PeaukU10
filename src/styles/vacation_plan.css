@@ -42,3 +42,9 @@ max-width: 1200px;
   .card-header:hover .btn-overlay {
     opacity: 1;
   }
+
+
+  .react-carousel {
+    padding: 2rem 0;
+  }
+

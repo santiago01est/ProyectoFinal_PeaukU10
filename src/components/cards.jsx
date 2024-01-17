@@ -8,7 +8,7 @@ import { Colors } from '../styles/global';
 
 const ImgPlanContainer = styled.img`
     width: 100%;
-    height: 80%;
+    height: 200px;
     object-fit: fill;
     
 `
@@ -96,7 +96,7 @@ const CardTravel = ({ city, country, price, discount, score, imgPath }) => {
 
 const CardPlan = ({ imgPath, title, price, time, score }) => {
     return (
-        <CardPlanContainerSC className="card p-0 book-card">
+        <CardPlanContainerSC className=" p-0 book-card">
             <div className="card-header p-0 border-0" style={{ backgroundColor: 'transparent' }}>
                 <ImgPlanContainer src={imgPath}></ImgPlanContainer>
             </div>

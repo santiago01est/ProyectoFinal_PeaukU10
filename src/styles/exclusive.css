@@ -19,6 +19,7 @@
   }
   
   .book-card {
+    width: 330px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 8px #f4a079;
@@ -75,3 +76,5 @@
         width: 100%;
     }
   }
+
+  

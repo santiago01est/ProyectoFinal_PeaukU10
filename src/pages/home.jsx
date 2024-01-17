@@ -8,13 +8,13 @@ import VacationPlan from '../layouts/vacation_plan/vacation_plan'
 import { getTravelData } from '../services/travel-api'; // Ajusta la ruta según sea necesario
 const Home= () => {
 
-    //const [travels, setTravels] = useState([]);
-/*
+    const [plansVacation, setPlansVacation] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const travelsData = await getTravelData();
-            setTravels(travelsData);
+            const plansVacationData = await getTravelData();
+            setPlansVacation(plansVacationData);
           } catch (error) {
             console.error('Error getting travel data:', error);
             
@@ -23,7 +23,7 @@ const Home= () => {
     
         fetchData();
       }, []);
-*/
+
     const travels = [
         {
             id: 1,
@@ -62,7 +62,7 @@ const Home= () => {
             imgPath: '/img/imgcard03.png'
         }
     ]
-
+/*
     const plansVacation = [
         {
            id: 1,
@@ -114,6 +114,8 @@ const Home= () => {
         }
 
     ]
+
+    */
     return (
         <>
         <Navbar/>
