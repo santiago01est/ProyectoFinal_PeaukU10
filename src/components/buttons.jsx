@@ -97,16 +97,16 @@ const ButtonBigCommonOutline= styled.button`
 `
 
 /** COMPONENTS **/
-const ButtonCircle= ({pathImg, type}) => {
+const ButtonCircle= ({pathImg, type, onClick}) => {
     return (
         // si el color es blanco entones el boton sera blanco 
         type === 'fill' ? (
-            <ButtonCircleFill className="btn">
-                <img src={pathImg}></img>
+            <ButtonCircleFill onClick={onClick} className="btn">
+                <img style={{width: '20px', height: '20px'}} src={pathImg}></img>
             </ButtonCircleFill>
         ): (
-            <ButtonCircleOutline className="btn">
-                <img src={pathImg}></img>
+            <ButtonCircleOutline onClick={onClick} className="btn">
+                <img style={{width: '20px', height: '20px'}} src={pathImg}></img>
             </ButtonCircleOutline>
         )
     )

@@ -1,4 +1,4 @@
-import CardThingsYouNeedToDo from "../../components/card_things_yntd";
+import { CardThingsYouNeedToDo } from "../../components/cards";
 import TitleSectionContainer from "../../components/title_section";
 import styled from "styled-components";
 
@@ -16,7 +16,7 @@ const ThingsYouNeedToDoContainerContentSC = styled.div`
     flex-direction: column;;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0em 1em;
+    padding: 4em 1em;
     `
 
 const CardsThingsYouNeedToDoContainerSC = styled.div`
@@ -25,7 +25,10 @@ const CardsThingsYouNeedToDoContainerSC = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items:center;
-
+    gap: 20px;
+    @media (max-width: 768px) {
+        justify-content: center;
+  }
     `
 const ThingsYouNeedToDo = () => {
     return (
@@ -37,12 +40,12 @@ const ThingsYouNeedToDo = () => {
                     subtitle={
                         "We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can afford."
                     }
-                    img={"/img/planesV2.svg"}/>
-               <CardsThingsYouNeedToDoContainerSC>
-                    <CardThingsYouNeedToDo title={"Sign up"} subtitle={"Completes all the work associated with planning and processing"} imgPath={"/icons/planning.svg"} linePath={"/icons/line_signUp.svg"}/>
-                    <CardThingsYouNeedToDo title={"Worth of Money"} subtitle={"After successful access then book from exclusive deals & pricing"} imgPath={"/icons/wallet.svg"} linePath={"/icons/line_money.svg"}/>
-                    <CardThingsYouNeedToDo title={"Exciting Travel"} subtitle={"Start and explore a wide range of exciting travel experience."} imgPath={"/icons/gps.svg"} linePath={"/icons/line_travel.svg"}/>
-               </CardsThingsYouNeedToDoContainerSC>
+                    img={"/img/planesV2.svg"} />
+                <CardsThingsYouNeedToDoContainerSC>
+                    <CardThingsYouNeedToDo title={"Sign up"} subtitle={"Completes all the work associated with planning and processing"} imgPath={"/icons/planning.svg"} linePath={"/icons/line_signUp.svg"} />
+                    <CardThingsYouNeedToDo title={"Worth of Money"} subtitle={"After successful access then book from exclusive deals & pricing"} imgPath={"/icons/wallet.svg"} linePath={"/icons/line_money.svg"} />
+                    <CardThingsYouNeedToDo title={"Exciting Travel"} subtitle={"Start and explore a wide range of exciting travel experience."} imgPath={"/icons/gps.svg"} linePath={"/icons/line_travel.svg"} />
+                </CardsThingsYouNeedToDoContainerSC>
             </ThingsYouNeedToDoContainerContentSC>
         </ThingsYouNeedToDoContainerSC>
     );

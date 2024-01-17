@@ -20,6 +20,8 @@ const TitleSection = styled.h2`
     font-size: 2rem;
   }
 `
+
+
 const TextTitle = styled.h2`
     font-size: 1.3rem;
     font-family: "Volkhov", serif;
@@ -47,8 +49,15 @@ const TextParagraphNormalSmaller = styled.p`
 const TextTitleCard = styled.h3`
     color: ${Colors.text};
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
 `
 
-export {TitleSection, TextTitle, TitleBig, TextParagraphNormal, TextParagraphNormalSmall, TextParagraphNormalSmaller, TextTitleCard}
+const TextSubtitleCard = styled.h2`
+    color: ${Colors.textGray};
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+`
+
+export {TitleSection, TextTitle, TitleBig, TextParagraphNormal, TextParagraphNormalSmall, TextParagraphNormalSmaller, TextTitleCard, TextSubtitleCard}
 
