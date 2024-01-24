@@ -6,6 +6,8 @@ import PeopleAbout from '../sections/people_about/people_about'
 import ThingsYouNeedToDo from '../sections/things_you_need_to_do/thingsYouNeedToDo'
 import VacationPlan from '../sections/vacation_plan/vacation_plan'
 import { getPlansVacationData } from '../services/planvacational-api'; // Ajusta la ruta según sea necesario
+import Blog from '../sections/blog/blog';
+import Footer from '../sections/footer/footer';
 const Home= () => {
 /*
     const [plansVacation, setPlansVacation] = useState([]);
@@ -115,6 +117,7 @@ const Home= () => {
 
     ]
 
+
     const comments = [
         {
             id: 1,
@@ -136,7 +139,42 @@ const Home= () => {
         }
     ]
 
-    console.log('iniciando');
+    const blogs= [
+        {
+            id: 1,
+            title: 'The Amazing Difference a Year of Travelling.',
+            date: 'July 27, 2021',
+            url: '/img/img_blog1.png'
+        },{
+            id: 2,
+            title: 'Travel far enough, you meet yourself.',
+            date: 'July 27, 2021',
+            url: '/img/img_blog2.png'
+        },{
+            id: 3,
+            title: 'How to Save Money While Visiting Africa.',
+            date: 'July 27, 2021',
+            url: '/img/img_blog3.png'
+        },
+        {
+            id: 4,
+            title: 'Reflections on 5 Months of Travel: Time to Hang.',
+            date: 'July 27, 2021',
+            url: '/img/img_blog4.png'
+        },
+        {
+            id: 5,
+            title: 'The Amazing Difference a Year of Travelling.',
+            date: 'July 27, 2021',
+            url: '/img/img_blog1.png'
+        },
+        {
+            id: 6,
+            title: 'Travel far enough, you meet yourself.',
+            date: 'July 27, 2021',
+            url: '/img/img_blog2.png'
+        }
+    ]
 
     
     return (
@@ -147,6 +185,8 @@ const Home= () => {
         <Exclusive travels={travels}/>
         <VacationPlan plansVacation={plansVacation}/>
         <PeopleAbout comments={comments}/>
+        <Blog blogs={blogs}/>
+        <Footer/>
         </>
     )
 }

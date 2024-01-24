@@ -101,7 +101,7 @@ const VacationPlan = ({ plansVacation }) => {
             </ContainerButtonsSC>
 
             <div style={{ padding: '10px 0px' }}>
-                <Carousel className="react-carousel"  responsive={responsive} ref={carouselRef} removeArrowOnDeviceType={['desktop','tablet', 'mobile']}>
+                <Carousel className="react-carousel"  responsive={responsive} ref={carouselRef} removeArrowOnDeviceType={['desktop','tablet', 'mobile']} showDots={true}>
                     {plan}
                 </Carousel>
             </div>

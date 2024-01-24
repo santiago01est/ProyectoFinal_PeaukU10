@@ -33,7 +33,7 @@ const TextField = ({label,type, name, value, onChange, placeholder, icon}) => {
 
         <label style={{width: '100%'}}>
             {label}
-        <ContainerTextFieldSC>
+        <ContainerTextFieldSC >
         <FontAwesomeIconSC icon={icon} />
         <InputText type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} />
       </ContainerTextFieldSC>

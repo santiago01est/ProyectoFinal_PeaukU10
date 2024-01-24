@@ -148,8 +148,8 @@ const PeopleAbout = ({comments}) => {
                
 
                 <ContainerCommentsSC>
-                <Carousel className="react-carousel"  responsive={responsive} ref={carouselRef} removeArrowOnDeviceType={['desktop','tablet', 'mobile']}>
-                    {commentsCarrusel}
+                <Carousel className="react-carousel"  responsive={responsive} ref={carouselRef} removeArrowOnDeviceType={['desktop','tablet', 'mobile']} showDots={true}>
+                    {commentsCarrusel} 
                 </Carousel>
                
             </ContainerCommentsSC>

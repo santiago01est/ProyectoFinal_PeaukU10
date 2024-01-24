@@ -1,0 +1,66 @@
+
+.btn-subcribe {
+    background: #fa7436;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+   
+    margin: 1rem;
+   
+    color: #fff;
+  }
+  .subcribe {
+    background-color: #fa7436;
+    height: 416px;
+    border-radius: 16px;
+    
+  }
+  .title-subcribe{
+    text-align: center;
+    font-family: "Volkhov", serif;
+    font-size: 48px;
+    color: #f7f8fc;
+  }
+  .ovalos{
+    width: 400px;
+    margin: 0 0 0 0;
+    position: absolute;
+    bottom:0;
+    left: 0;
+   
+  }
+  .palmeras-smart2{
+    width: 7rem;
+    margin:0 0 auto auto;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .img-correo{
+   position: absolute;
+   position:  initial;
+   transform: translatex(18vw);
+  }
+  .btn-fotter{
+    border-radius: 200px;
+    box-shadow: 0px 2px 10px 0px #0000001A;
+  }
+  .btn-fotter2{
+    background-color: #fa7436;
+    border-radius: 200px;
+    box-shadow: 0px 2px 10px 0px #0000001A;
+   
+  }
+  .btn-fotter2:hover{
+    background-color: #fa7436;
+  }
+  .table-footer tbody tr td a{
+    color: #666666;
+    text-decoration: none;
+    }
+  .copyryght{
+    color: #666666;
+    ;
+  }
