@@ -46,8 +46,8 @@ const VacationPlan = ({ plansVacation }) => {
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            slidesToSlide: 2, // Puedes ajustar esto según tus necesidades
+            items: 1,
+            slidesToSlide: 1, // Puedes ajustar esto según tus necesidades
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },

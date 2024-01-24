@@ -39,7 +39,7 @@ width: 50px;
 const ButtonCommonFill= styled.button`
     background-color: ${Colors.secondary};
     color: ${Colors.primary};
-    padding: 8px 30px;
+    padding: 8px 50px;
     font-weight: 450;
     /* sombra del boton*/
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -53,7 +53,7 @@ const ButtonCommonFill= styled.button`
 
 const ButtonCommonOutline= styled.button`
     color: ${Colors.secondary};
-    padding: 8px 30px;
+    padding: 8px 50px;
     font-weight: 450;
 
 //hover
@@ -112,14 +112,16 @@ const ButtonCircle= ({pathImg, type, onClick}) => {
     )
 }
 
-const ButtonCommon= ({text, type}) => {
+
+
+const ButtonCommon= ({text, typeForm, type, onClick}) => {
     return (
-        type === 'fill' ? (
-            <ButtonCommonFill className="btn">
+        typeForm === 'fill' ? (
+            <ButtonCommonFill onClick={onClick} type={type} className="btn">
                 {text}
             </ButtonCommonFill>
         ): (
-            <ButtonCommonOutline className="btn">
+            <ButtonCommonOutline onClick={onClick} type={type} className="btn">
                 {text}
             </ButtonCommonOutline>
         )

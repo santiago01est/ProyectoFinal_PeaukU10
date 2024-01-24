@@ -4,6 +4,7 @@ import '../styles/things_you_need_to_do.css'
 import { TextSubtitleCard, TextTitleCard } from './texts'
 import { ButtonCommon } from './buttons';
 import '../styles/exclusive.css'
+import '../styles/people_about.css'
 import { Colors } from '../styles/global';
 
 const ImgPlanContainer = styled.img`
@@ -26,6 +27,16 @@ const CardPlanContainerSC = styled.div`
     background: #FFF;
     height: auto;
     margin: auto;
+    `
+
+const CardCommentContainerSC = styled.div`
+    padding: 0;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(102, 102, 102, 0.08);
+    background: #FFF;
+    height: 100%;
+    margin: auto;
+    position: relative;
     `
 
 const ImgThingsSC = styled.img`
@@ -124,6 +135,29 @@ const CardPlan = ({ imgPath, title, price, time, score }) => {
     )
 }
 
+const CardComments = ({ imgPath , name, comment}) => {
+    return(
+        <CardCommentContainerSC>
+                        <div className="avatar-people-about  rounded-circle overflow-hidden">
+                            <img className="w-100 h-100" src={imgPath} alt=""
+                                style={{ objectFit: 'cover' }} />
+                        </div>
+                        <article className="card-people-about author mt-3">
+                            <p style={{ lineHeight: '2rem' }}>
+                                {comment}
+                            </p>
+                            <div className="d-flex flex-column">
+                                <h6 style={{ fontSize: '18px', fontWeight: '600', lineHeight: '2rem' }}>{name}</h6>
+                                <span className="text-body-secondary" style={{ fontSize: '14px' }}>
+                                    Lahore, Pakistan
+                                </span>
+                            </div>
+                        </article>
+                       
+                    </CardCommentContainerSC>
+    )
+}
 
 
-export { CardThingsYouNeedToDo, CardPlan, CardTravel };
+
+export { CardThingsYouNeedToDo, CardPlan, CardTravel, CardComments };

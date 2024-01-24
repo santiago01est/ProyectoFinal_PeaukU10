@@ -1,6 +1,6 @@
-const apiUrl = 'http://localhost:3124/api/public'; // Reemplaza con la URL de tu backend
+const apiUrl = 'http://localhost:3124/api/public';
 
-export const getTravelData = async () => {
+export const getPlansVacationData = async () => {
   try {
     const response = await fetch(`${apiUrl}/planes/todos`);
     if (!response.ok) {

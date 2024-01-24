@@ -1,101 +1,153 @@
-import '../styles/navbar.css';
-import React, { useRef } from 'react';
-import { Link } from "react-scroll";
-import { TextTitle } from './texts';
-import { ButtonCommon } from './buttons';
+import "../styles/navbar.css";
+import React, { useRef } from "react";
+import { TextTitle, TextParagraphNormalSmall} from "./texts";
+import { ButtonCommon } from "./buttons";
+import { Link } from "react-router-dom";
+import { getIsLoggedIn } from "../services/auth";
 const Navbar = () => {
+  /* is Logined */
+  const isLogged = getIsLoggedIn();
 
-    // Utiliza useRef para obtener referencias a los elementos del DOM
-    const toggleBtnRef = useRef(null);
-    const toggleBtnIconRef = useRef(null);
-    const dropDownMenuRef = useRef(null);
+  // Utiliza useRef para obtener referencias a los elementos del DOM
+  const toggleBtnRef = useRef(null);
+  const toggleBtnIconRef = useRef(null);
+  const dropDownMenuRef = useRef(null);
 
-    // Manejador del evento click para el botón de alternancia
-    const handleToggle = () => {
-        const dropDownMenu = dropDownMenuRef.current;
-        if (dropDownMenu) {
-            dropDownMenu.classList.toggle('open');
-            const isOpen = dropDownMenu.classList.contains('open');
-            const toggleBtnIcon = toggleBtnIconRef.current;
-            if (toggleBtnIcon) {
-                // Actualizar la clase según el estado del menú desplegable
-                toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-            }
-        }
-    };
+  // Manejador del evento click para el botón de alternancia
+  const handleToggle = () => {
+    const dropDownMenu = dropDownMenuRef.current;
+    if (dropDownMenu) {
+      dropDownMenu.classList.toggle("open");
+      const isOpen = dropDownMenu.classList.contains("open");
+      const toggleBtnIcon = toggleBtnIconRef.current;
+      if (toggleBtnIcon) {
+        // Actualizar la clase según el estado del menú desplegable
+        toggleBtnIcon.className = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      }
+    }
+  };
 
-    return (
-        <header>
-            <div className="navbar">
-                <div className="logo">
-                    <img src="/img/logo.png" alt="Logo"></img>
-                    <TextTitle>Trabook</TextTitle>
-                </div>
+  return (
+    <header>
+      <div className="navbar">
+        <div className="logo">
+          <img src="/img/logo.png" alt="Logo"></img>
+          <TextTitle>Trabook</TextTitle>
+        </div>
 
-                <ul className="links">
-                    <li><Link activeClass="active" smooth spy to="home">
-                        Home
-                    </Link></li>
+        <ul className="links">
+          <li>
+            <Link activeClass="active" smooth spy to="/">
+              Home
+            </Link>
+          </li>
 
-                    <li><Link activeClass="active" smooth spy to="about">
-                        About
-                    </Link></li>
+          <li>
+            <Link activeClass="active" smooth spy to="about">
+              About
+            </Link>
+          </li>
 
-                    <li><Link activeClass="active" smooth spy to="skills">
-                    Destination
-                    </Link></li>
+          <li>
+            <Link activeClass="active" smooth spy to="skills">
+              Destination
+            </Link>
+          </li>
 
-                    <li><Link activeClass="active" smooth spy to="projects">
-                        Tour
-                    </Link></li>
+          <li>
+            <Link activeClass="active" smooth spy to="projects">
+              Tour
+            </Link>
+          </li>
 
-                    <li><Link activeClass="active" smooth spy to="projects">
-                        Blog
-                    </Link></li>
-
-                </ul>
-                <div className="action_btn">
-                <ButtonCommon text={'Login'} type={'outline'}><Link activeClass="active" smooth spy to="">
-                </Link></ButtonCommon>
-                <ButtonCommon text={'Sign Up'} type={'fill'}><Link activeClass="active" smooth spy to="">
-                </Link></ButtonCommon>
-                </div>
-                
-
-                <div className="toggle_btn" ref={toggleBtnRef} onClick={handleToggle}>
-                    <i className="fa-solid fa-bars" ref={toggleBtnIconRef}></i>
-                </div>
+          <li>
+            <Link activeClass="active" smooth spy to="/loginsignup">
+              Blog
+            </Link>
+          </li>
+        </ul>
+        <div className="action_btn">
+          {!isLogged ? (
+            <>
+             <Link activeClass="active" smooth spy to="/loginsignup">
+             <ButtonCommon text={"Login"} typeForm={"outline"}></ButtonCommon>
+           </Link>
+           <Link activeClass="active" smooth spy to="/loginsignup">
+             <ButtonCommon text={"Sign Up"} typeForm={"fill"}></ButtonCommon>
+           </Link>
+           </>
+          ) : (
+            <Link activeClass="active" smooth spy to="/profile">
+             <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+            <TextParagraphNormalSmall style={{color: "#222"}}>Santiago Estrada</TextParagraphNormalSmall>
+            <img src="/img/avatar-people-about.png" style={{width: '40px', height: '40px', borderRadius: '50%'}} ></img>
             </div>
+            </Link>
+           
+          )}
+         
+        </div>
 
-            <div className="dropdown_menu" ref={dropDownMenuRef}>
-            <li><Link activeClass="active" smooth spy to="home">
-                        Home
-                    </Link></li>
+        <div className="toggle_btn" ref={toggleBtnRef} onClick={handleToggle}>
+          <i className="fa-solid fa-bars" ref={toggleBtnIconRef}></i>
+        </div>
+      </div>
 
-                    <li><Link activeClass="active" smooth spy to="about">
-                        About
-                    </Link></li>
+      <div className="dropdown_menu" ref={dropDownMenuRef}>
+        <li>
+          <Link activeClass="active" smooth spy to="home">
+            Home
+          </Link>
+        </li>
 
-                    <li><Link activeClass="active" smooth spy to="skills">
-                    Destination
-                    </Link></li>
+        <li>
+          <Link activeClass="active" smooth spy to="about">
+            About
+          </Link>
+        </li>
 
-                    <li><Link activeClass="active" smooth spy to="projects">
-                        Tour
-                    </Link></li>
+        <li>
+          <Link activeClass="active" smooth spy to="skills">
+            Destination
+          </Link>
+        </li>
 
-                    <li><Link activeClass="active" smooth spy to="projects">
-                        Blog
-                    </Link></li>
-                <div className="action_btn">
-                <ButtonCommon text={'Login'} type={'outline'}><Link activeClass="active" smooth spy to="">
-                </Link></ButtonCommon>
-                <ButtonCommon text={'Sign Up'} type={'fill'}><Link activeClass="active" smooth spy to="">
-                </Link></ButtonCommon>
-                </div>
+        <li>
+          <Link activeClass="active" smooth spy to="projects">
+            Tour
+          </Link>
+        </li>
+
+        <li>
+          <Link activeClass="active" smooth spy to="projects">
+            Blog
+          </Link>
+        </li>
+        <div className="action_btn">
+        {!isLogged ? (
+            <>
+             <Link activeClass="active" smooth spy to="/loginsignup">
+             <ButtonCommon text={"Login"} typeForm={"outline"}></ButtonCommon>
+           </Link>
+           <Link activeClass="active" smooth spy to="/loginsignup">
+             <ButtonCommon text={"Sign Up"} typeForm={"fill"}></ButtonCommon>
+           </Link>
+           </>
+          ) : (
+            <Link activeClass="active" smooth spy to="/profile">
+             <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+            <TextParagraphNormalSmall style={{color: "#222"}}>Santiago Estrada</TextParagraphNormalSmall>
+            <img src="/img/avatar-people-about.png" style={{width: '40px', height: '40px', borderRadius: '50%'}} ></img>
             </div>
-        </header>
-    )
-}
+            </Link>
+           
+          )}
+        </div>
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -7,7 +7,7 @@ const ThingsYouNeedToDoContainerSC = styled.div`
     margin: 0 0;
     width: 100%;
     position: relative;
-    margin-top: 90px;
+    margin-top: 90px; 
     `
 const ThingsYouNeedToDoContainerContentSC = styled.div`
     display: flex;
