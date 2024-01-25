@@ -4,9 +4,11 @@ import { TextTitle, TextParagraphNormalSmall} from "./texts";
 import { ButtonCommon } from "./buttons";
 import { Link } from "react-router-dom";
 import { getIsLoggedIn } from "../services/auth";
+import { useAuth } from "../services/authProvider";
+
 const Navbar = () => {
   /* is Logined */
-  const isLogged = getIsLoggedIn();
+  const isAuthenticated = getIsLoggedIn();
 
   // Utiliza useRef para obtener referencias a los elementos del DOM
   const toggleBtnRef = useRef(null);
@@ -69,7 +71,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="action_btn">
-          {!isLogged ? (
+          {!isAuthenticated ? (
             <>
              <Link activeClass="active" smooth spy to="/loginsignup">
              <ButtonCommon text={"Login"} typeForm={"outline"}></ButtonCommon>
@@ -126,7 +128,7 @@ const Navbar = () => {
           </Link>
         </li>
         <div className="action_btn">
-        {!isLogged ? (
+        {!isAuthenticated  ? (
             <>
              <Link activeClass="active" smooth spy to="/loginsignup">
              <ButtonCommon text={"Login"} typeForm={"outline"}></ButtonCommon>

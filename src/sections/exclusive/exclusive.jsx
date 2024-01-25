@@ -33,6 +33,8 @@ const Exclusive = ({travels}) => {
                 subtitle={
                     "Discover our fantastic early booking discounts & start planning your journey."
                 } />
+
+                
             <CardsExclusiveContainerSC>
                 {travels.map((travel) => (
                     <CardTravel key={travel.id} city={travel.city} country={travel.country} price={travel.price} discount={travel.discount} score={travel.score} imgPath={travel.imgPath} />

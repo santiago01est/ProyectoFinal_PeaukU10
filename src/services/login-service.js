@@ -1,23 +1,49 @@
+
+import { useAuth } from "./authProvider";
+
 export const sendDataLogin = async (data) => {
     try {
-      
-      const response = await fetch('/url/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+       // const goTo = useNavigate();
+        const auth = useAuth();
 
-      // Si la respuesta es exitosa, redirigir a la pantalla de inicio
-      if (response.ok) {
-        
-        console.log('started session successfully');
-      } else {
-        // Si la respuesta no es exitosa, manejar el error
-        console.error('Error to start session');
-      }
+        console.log('holaaaaaa');
+        const response = await fetch('https://peaku10ssn.onrender.com/api/public/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            console.log('login successfully');
+            /*
+            const json=(await response.json());
+            if(json.body.token){
+                auth.saveUser(json);
+                goTo('/');
+            }
+            */
+
+        } else {
+            // Si la respuesta no es exitosa, manejar el error
+            console.error('Error to signup');
+        }
     } catch (error) {
-      console.error('Error to comunicate with server', error);
+        console.error('Error to communicate with server', error);
     }
-  };
+
+};
+
+// logout
+
+export const logout = () => {
+    const auth = useAuth();
+    // const goto = useNavigate();
+
+    auth.logout();
+
+    // goto('/');
+
+
+}

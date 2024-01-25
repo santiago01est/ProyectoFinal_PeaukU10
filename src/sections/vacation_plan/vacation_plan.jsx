@@ -37,6 +37,7 @@ const CardsPlanContainerSC = styled.div`
 
 
 const VacationPlan = ({ plansVacation }) => {
+
     const carouselRef = useRef(null);
     const responsive = {
         desktop: {
@@ -67,13 +68,13 @@ const VacationPlan = ({ plansVacation }) => {
 
     const plan= plansVacation.map((plan, index) => (
         <CardPlan
-            key={plan.id}
+            key={index}
             title={plan.nombre}
             price={plan.precio}
             time={plan.duracion_dias}
             score={5}
             imgPath={plan.url_img}
-            id={index}
+            id={plan.id}
         />
     ))
 

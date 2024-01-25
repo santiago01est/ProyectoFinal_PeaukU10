@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "../components/textfield";
 import { faIdCard, faMailBulk, faPhone, faUnlockAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 import { ButtonCommon } from "../components/buttons";
-import { sendDataLogin } from "../services/login-service";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../services/authProvider";
+import { getIsLoggedIn, login } from "../services/auth";
+
 
 const ContainerMain = styled.div`
   width: 100%;
@@ -78,20 +81,53 @@ const BlackSeparator = styled.div`
   background-color: black;
   margin: 20px 0; // Ajusta el margen según tus necesidades
 `;
+
+
 const LoginTab = () => {
-  const [loginData, setLoginData] = useState({ username: "", password: "" });
-  const [usernameError, setUsernameError] = useState("");
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const goTo = useNavigate();
+  const isAuthenticated= getIsLoggedIn();
+
+  const sendDataLogin = async (data) => {
+  try {
+      const response = await fetch('https://peaku10ssn.onrender.com/api/public/auth/login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        if (userData.token) {
+          login(true, "admin",userData.token);
+          goTo('/');
+        } else {
+          console.error('Respuesta no válida del servidor: no se encontró ningún token');
+        }
+      } else {
+          // Si la respuesta no es exitosa, manejar el error
+          console.error('Error to login');
+      }
+  } catch (error) {
+      console.error('Error to communicate with server', error);
+  }
+
+};
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
 
     // Validar campos antes de enviar al backend
-    if (!loginData.username) {
-      setUsernameError("Ingrese su nombre de usuario");
+    if (!loginData.email) {
+      setEmailError("Ingrese su nombre de usuario");
       return;
     } else {
-      setUsernameError("");
+      setEmailError("");
     }
 
     if (!loginData.password) {
@@ -104,8 +140,7 @@ const LoginTab = () => {
 
     // Si todos los campos son válidos, enviar los datos al backend
     console.log("Login data:", loginData);
-    // TODO
-    //sendDataLogin(loginData);
+    sendDataLogin(loginData);
   };
 
   const handleLoginChange = (e) => {
@@ -130,15 +165,15 @@ const LoginTab = () => {
       >
      
         <TextField
-          label={"Username:"}
+          label={"Email:"}
           type={"text"}
-          name={"username"}
-          value={loginData.username}
+          name={"email"}
+          value={loginData.email}
           onChange={handleLoginChange}
           icon={faUser}
           placeholder={"Enter your E-mail"}
         />
-        {usernameError && <p style={{ color: "orange", textAlign: "start" }}>{usernameError}</p>}
+        {emailError && <p style={{ color: "orange", textAlign: "start" }}>{emailError}</p>}
        
         
         <TextField
@@ -172,6 +207,8 @@ const SignUpTab = () => {
     confirmPassword: '',
   });
 
+  const goTo = useNavigate();
+
   const [messageInfo, setmessageInfo] = useState('');
   const [nameError, setNameError] = useState('');
   const [lastnameError, setLastnameError] = useState('');
@@ -180,6 +217,43 @@ const SignUpTab = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [currentStep, setCurrentStep] = useState(1);
+
+  const sendDataSignUp = async (data) => {
+
+    const cleanData={
+        username: data.firstName,
+        password: data.password,
+        nombre: data.name,
+        apellidos: data.lastName,
+        email: data.email,
+        telefono: data.phone,
+    }
+   
+  
+    try {
+        
+        const URL = "https://peaku10ssn.onrender.com";
+        const response = await fetch(`${URL}/api/public/cliente/crear`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(cleanData),
+        });
+  
+        if (response.ok) {
+            console.log('signup successfully');
+            // REDIRECCIONAR AL HOME
+            goTo('/loginsignup');
+        } else {
+            // Si la respuesta no es exitosa, manejar el error
+            console.error('Error to signup');
+        }
+    } catch (error) {
+        console.error(error.message, error);
+    }
+  
+  }
 
   const handleNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
@@ -241,9 +315,9 @@ const SignUpTab = () => {
       setmessageInfo('');
     
 
-    // Si todos los campos son válidos, enviar los datos al backend
-    console.log('Signup data:', signupData);
-    // TODO: sendDataSignUp(signupData);
+      // aqui se presenta el error al llamar esta funcion
+      sendDataSignUp(signupData);
+ 
   };
 
   const handleSignUpChange = (e) => {
@@ -390,6 +464,12 @@ const Tabs = () => {
 };
 
 const LoginSignup = () => {
+
+  const auth= useAuth ();
+
+  if(auth.isAuthenticated){
+    return <Navigate to="/"/>
+  }
   return (
     <ContainerMain>
       <LoginSignupContainerSC>

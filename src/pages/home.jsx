@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar'
 import BannerMain from '../sections/banner_main/banner_main'
 import Exclusive from '../sections/exclusive/exclusive'
 import PeopleAbout from '../sections/people_about/people_about'
@@ -9,7 +8,7 @@ import { getPlansVacationData } from '../services/planvacational-api'; // Ajusta
 import Blog from '../sections/blog/blog';
 import Footer from '../sections/footer/footer';
 const Home= () => {
-/*
+
     const [plansVacation, setPlansVacation] = useState([]);
 
     useEffect(() => {
@@ -25,7 +24,7 @@ const Home= () => {
     
         fetchData();
       }, []);
-*/
+
     const travels = [
         {
             id: 1,
@@ -65,6 +64,7 @@ const Home= () => {
         }
     ]
 
+    /*
     const plansVacation = [
         {
            id: 1,
@@ -117,7 +117,7 @@ const Home= () => {
 
     ]
 
-
+*/
     const comments = [
         {
             id: 1,

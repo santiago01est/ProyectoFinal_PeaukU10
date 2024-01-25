@@ -1,15 +1,18 @@
-const apiUrl = 'http://localhost:3124/api/public';
+const apiUrl = 'https://peaku10ssn.onrender.com';
 
 export const getPlansVacationData = async () => {
+
   try {
-    const response = await fetch(`${apiUrl}/planes/todos`);
+    const response = await fetch(`${apiUrl}/api/public/planes/todos`);
     if (!response.ok) {
-      throw new Error('Error get travel data');
+      throw new Error('Failed to fetch plans vacation data');
     }
-    const datos = await response.json();
-    return datos;
+
+    const plansVacationData = await response.json();
+    console.log(plansVacationData);
+    return plansVacationData;
   } catch (error) {
-    console.error('Error:', error);
-    throw error;
+    throw new Error(`Error in getPlansVacationData: ${error.message}`);
   }
+
 };
