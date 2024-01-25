@@ -1,8 +1,9 @@
-const apiUrl = 'https://peaku10ssn.onrender.com';
+import { API_URL } from "../env";
 
 export const getPlansVacationData = async () => {
 
   try {
+    const apiUrl = API_URL;
     const response = await fetch(`${apiUrl}/api/public/planes/todos`);
     if (!response.ok) {
       throw new Error('Failed to fetch plans vacation data');

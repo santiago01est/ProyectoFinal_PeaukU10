@@ -6,6 +6,7 @@ import { ButtonCommon } from "../components/buttons";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../services/authProvider";
 import { getIsLoggedIn, login } from "../services/auth";
+import { API_URL } from "../env";
 
 
 const ContainerMain = styled.div`
@@ -93,7 +94,8 @@ const LoginTab = () => {
 
   const sendDataLogin = async (data) => {
   try {
-      const response = await fetch('https://peaku10ssn.onrender.com/api/public/auth/login', {
+    const apiUrl = API_URL;
+    const response = await fetch(`${apiUrl}/api/public/auth/login`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -104,8 +106,10 @@ const LoginTab = () => {
       if (response.ok) {
         const userData = await response.json();
         if (userData.token) {
-          login(true, "admin",userData.token);
+          
+          login(true, userData.rol ,userData.token, userData.usuario);
           goTo('/');
+          console.log('login successfully', userData.usuario);
         } else {
           console.error('Respuesta no válida del servidor: no se encontró ningún token');
         }
@@ -220,7 +224,12 @@ const SignUpTab = () => {
 
   const sendDataSignUp = async (data) => {
 
-    const cleanData={
+    
+   
+  
+    try {
+
+      const cleanData={
         username: data.firstName,
         password: data.password,
         nombre: data.name,
@@ -228,12 +237,9 @@ const SignUpTab = () => {
         email: data.email,
         telefono: data.phone,
     }
-   
-  
-    try {
         
-        const URL = "https://peaku10ssn.onrender.com";
-        const response = await fetch(`${URL}/api/public/cliente/crear`, {
+    const apiUrl = API_URL;
+        const response = await fetch(`${apiUrl}/api/public/cliente/crear`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

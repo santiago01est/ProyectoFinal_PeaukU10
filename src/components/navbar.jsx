@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { TextTitle, TextParagraphNormalSmall} from "./texts";
 import { ButtonCommon } from "./buttons";
 import { Link } from "react-router-dom";
-import { getIsLoggedIn } from "../services/auth";
+import { getIsLoggedIn, getName } from "../services/auth";
 import { useAuth } from "../services/authProvider";
 
 const Navbar = () => {
@@ -83,7 +83,7 @@ const Navbar = () => {
           ) : (
             <Link activeClass="active" smooth spy to="/profile">
              <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-            <TextParagraphNormalSmall style={{color: "#222"}}>Santiago Estrada</TextParagraphNormalSmall>
+            <TextParagraphNormalSmall style={{color: "#222"}}>{getName()}</TextParagraphNormalSmall>
             <img src="/img/avatar-people-about.png" style={{width: '40px', height: '40px', borderRadius: '50%'}} ></img>
             </div>
             </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
           ) : (
             <Link activeClass="active" smooth spy to="/profile">
              <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-            <TextParagraphNormalSmall style={{color: "#222"}}>Santiago Estrada</TextParagraphNormalSmall>
+            <TextParagraphNormalSmall style={{color: "#222"}}>{getName()}</TextParagraphNormalSmall>
             <img src="/img/avatar-people-about.png" style={{width: '40px', height: '40px', borderRadius: '50%'}} ></img>
             </div>
             </Link>

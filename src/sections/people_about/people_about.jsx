@@ -95,12 +95,12 @@ const PeopleAbout = ({comments}) => {
         },
     };
     const handlePrevious = () => {
-        console.log('Anterior clickeado');
+       
         carouselRef.current.previous();
      };
      
      const handleNext = () => {
-        console.log('Siguiente clickeado');
+     
         carouselRef.current.next();
      };
 
@@ -117,7 +117,7 @@ const PeopleAbout = ({comments}) => {
             name={comment.name} 
             comment={comment.comment} />
     ))
-    console.log(commentsCarrusel)
+
 
     return (
         <PeopleAboutContainerSC>

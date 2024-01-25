@@ -3,7 +3,9 @@ import TextField from "../components/textfield";
 import { ButtonCommon } from "../components/buttons";
 import React, { useState, useEffect } from "react";
 import { TextTitle } from "../components/texts";
-import { getRolUser, login } from "../services/auth";
+import { getName, getRolUser, login } from "../services/auth";
+import { getTravelData, sendPlanVacationData } from "../services/travel-api";
+import { getTravels } from "../services/localdb";
 
 const ContainerMain = styled.div`
   width: 100%;
@@ -126,73 +128,26 @@ const Profile = () => {
   /* Si es admin trae los viajes para poner crear un plan */
   const [travel, setTravel] = useState([]);
 
-  if (getRolUser() === "admin") {
-    /*
-            useEffect(() => {
-                const fetchData = async () => {
-                  try {
-                    const travelData = await getTravelData();
-                    setTravel(travelData);
-                  } catch (error) {
-                    console.error('Error getting travel data:', error);
-                    
-                  }
-                };
-            
-                fetchData();
-              }, []);
-              */
 
-    useEffect(() => {
-      const fetchData = async () => {
+  if (getName() === "admin") {
+
+     useEffect(() => {
+      const fetchData =  () => {
         try {
-          const travelsquemado = [
-            {
-              id: 1,
-              city: "Madrid",
-              country: "Spain",
-              price: 850,
-              discount: 950,
-              score: 4.8,
-              imgPath: "/img/imgcard04.png",
-            },
-            {
-              id: 2,
-              city: "Firenze",
-              country: "Italy",
-              price: 750,
-              discount: 850,
-              score: 4.5,
-              imgPath: "/img/imgcard02.png",
-            },
-            {
-              id: 3,
-              city: "Paris",
-              country: "France",
-              price: 599,
-              discount: 699,
-              score: 4.4,
-              imgPath: "/img/imgcard01.png",
-            },
-            {
-              id: 4,
-              city: "London",
-              country: "Uk",
-              price: 850,
-              discount: 950,
-              score: 4.8,
-              imgPath: "/img/imgcard03.png",
-            },
-          ];
-          setTravel(travelsquemado);
-          console.log(travelsquemado);
+          const travelData =  getTravels();
+          setTravel(travelData);
         } catch (error) {
-          console.error("Error getting travel data:", error);
+          console.error('Error getting travel data:', error);
+          
         }
       };
-
+  
       fetchData();
     }, []);
+ 
+
+
+   
   }
 
   /* use state para crear un plan y manejar errores de entrada */
@@ -204,6 +159,8 @@ const Profile = () => {
     price: "",
     url: "",
   });
+
+  
 
   const [tripInfo, setTripInfo] = useState("");
   const [nameError, setNameError] = useState("");
@@ -270,9 +227,7 @@ const Profile = () => {
       setUrlError("");
     }
 
-    // Si todos los campos son válidos, enviar los datos al backend
-    console.log("plan data:", planCreateData);
-    // TODO: sendDataSignUp(signupData);
+    sendPlanVacationData(planCreateData)
   };
 
   const handleCreatePlanChange = (e) => {
@@ -326,15 +281,15 @@ const Profile = () => {
                                  <InputRadio
                                     type="radio"
                                     name="selectedTrip"
-                                    value={trip.id}
-                                    checked={selectedTrip === trip.id}
+                                    value={trip.viaje_id}
+                                    checked={selectedTrip === trip.viaje_id}
                                     onChange={() =>
-                                      handleTripSelection(trip.id)
+                                      handleTripSelection(trip.viaje_id)
                                     }
                                   />
-                                <TableCell>{trip.city}</TableCell>
-                                <TableCell>{trip.country}</TableCell>
-                                <TableCell>{trip.price}</TableCell>
+                                <TableCell>{trip.ciudad}</TableCell>
+                                <TableCell>{trip.pais}</TableCell>
+                                <TableCell>{trip.precio}</TableCell>
                                 <TableCell>
                                  
                                 </TableCell>

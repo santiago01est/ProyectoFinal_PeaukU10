@@ -7,62 +7,44 @@ import VacationPlan from '../sections/vacation_plan/vacation_plan'
 import { getPlansVacationData } from '../services/planvacational-api'; // Ajusta la ruta según sea necesario
 import Blog from '../sections/blog/blog';
 import Footer from '../sections/footer/footer';
-const Home= () => {
+import { getTravelData } from '../services/travel-api';
+import { setTravelsLocal } from '../services/localdb';
+const Home = () => {
 
     const [plansVacation, setPlansVacation] = useState([]);
+    const [travels, setTravel] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-          try {
-            const plansVacationData = await getPlansVacationData();
-            setPlansVacation(plansVacationData);
-          } catch (error) {
-            console.error('Error getting travel data:', error);
-            
-          }
-        };
-    
-        fetchData();
-      }, []);
+            try {
+                const plansVacationData = await getPlansVacationData();
+                setPlansVacation(plansVacationData);
+            } catch (error) {
+                console.error('Error getting plan data:', error);
 
-    const travels = [
-        {
-            id: 1,
-            city: 'Madrid',
-            country: 'Spain',
-            precio: 850,
-            discount: 950,
-            score: 4.8,
-            imgPath: '/img/imgcard04.png'
-        },
-        {
-            id: 2,
-            city: 'Firenze',
-            country: 'Italy',
-            price: 750,
-            discount: 850,
-            score: 4.5,
-            imgPath: '/img/imgcard02.png'
-        },
-        {
-            id: 3,
-            city: 'Paris',
-            country: 'France',
-            price: 599,
-            discount: 699,
-            score: 4.4,
-            imgPath: '/img/imgcard01.png'
-        },
-        {
-            id: 4,
-            city: 'London',
-            country: 'Uk',
-            price: 850,
-            discount: 950,
-            score: 4.8,
-            imgPath: '/img/imgcard03.png'
-        }
-    ]
+            }
+        };
+
+        fetchData();
+    }, []);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const travelData = await getTravelData();
+                setTravel(travelData);
+                setTravelsLocal(travelData);
+            } catch (error) {
+                console.error('Error getting travel data:', error);
+
+            }
+        };
+
+        fetchData();
+    }, []);
+
+
 
     /*
     const plansVacation = [
@@ -139,18 +121,18 @@ const Home= () => {
         }
     ]
 
-    const blogs= [
+    const blogs = [
         {
             id: 1,
             title: 'The Amazing Difference a Year of Travelling.',
             date: 'July 27, 2021',
             url: '/img/img_blog1.png'
-        },{
+        }, {
             id: 2,
             title: 'Travel far enough, you meet yourself.',
             date: 'July 27, 2021',
             url: '/img/img_blog2.png'
-        },{
+        }, {
             id: 3,
             title: 'How to Save Money While Visiting Africa.',
             date: 'July 27, 2021',
@@ -176,17 +158,17 @@ const Home= () => {
         }
     ]
 
-    
+
     return (
         <>
-        
-        <BannerMain/>
-        <ThingsYouNeedToDo/>
-        <Exclusive travels={travels}/>
-        <VacationPlan plansVacation={plansVacation}/>
-        <PeopleAbout comments={comments}/>
-        <Blog blogs={blogs}/>
-        <Footer/>
+
+            <BannerMain />
+            <ThingsYouNeedToDo />
+            <Exclusive travels={travels} />
+            <VacationPlan plansVacation={plansVacation} />
+            <PeopleAbout comments={comments} />
+            <Blog blogs={blogs} />
+            <Footer />
         </>
     )
 }

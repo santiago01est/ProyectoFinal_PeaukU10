@@ -34,7 +34,10 @@ function App() {
       children: [
         {
           path: '/profile',
-          element: <Profile/>
+          element: <>
+          <Navbar />
+          <Profile/>
+          </>
         }
       ]
     }

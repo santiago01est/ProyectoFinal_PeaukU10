@@ -1,13 +1,14 @@
 
+import { API_URL } from "../env";
 import { useAuth } from "./authProvider";
 
 export const sendDataLogin = async (data) => {
     try {
        // const goTo = useNavigate();
         const auth = useAuth();
+        const apiUrl = API_URL;
 
-        console.log('holaaaaaa');
-        const response = await fetch('https://peaku10ssn.onrender.com/api/public/auth/login', {
+        const response = await fetch(`${apiUrl}/api/public/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
